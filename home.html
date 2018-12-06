@@ -143,10 +143,10 @@
         </article>
 
         <article class="article__fourth" id="depoimentos">
-            <div class="article__fourth-depoimentos" data-aos="fade-up">
+            <div class="article__fourth-depoimentos">
                 <h2>Depoimentos</h2>
                 <div class="carousel">
-                    <div class="item red slide-in" id="item1">
+                    <div class="item item--active red slide-in" id="item1">
                         <div class="article__depoimentos-card-body">
                             <div class="article__depoimentos-card-pic"><img src="./img/depoimento1.png"></div>
                             <div class="article__depoimentos-card-text">"...o Gui veio em casa como lar temporário juntamente
@@ -217,6 +217,20 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        const slides = document.querySelectorAll('.carousel .item');
+        const slidesControl = document.querySelectorAll('.controls a');
+
+        function changeSlide(e) {
+            document.querySelector('.item--active').classList.remove('item--active');
+            const nextSlideId = e.target.getAttribute('href');
+            const nextSlide = document.querySelector(nextSlideId);
+            setTimeout(() => {
+                nextSlide.classList.add('item--active');
+            }, 200)
+        }
+        slidesControl.forEach(slideButton => slideButton.addEventListener('click', changeSlide))
     </script>
 </body>
 

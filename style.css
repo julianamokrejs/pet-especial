@@ -477,6 +477,11 @@ article p {
 }
 
 .carousel .item--active {
+    /* -webkit-transform: translate3d(90%, 0px, 0px);
+    -moz-transform: translate3d(90%, 0px, 0px);
+    -ms-transform: translate3d(90%, 0px, 0px);
+    -o-transform: translate(90%, 0px, 0px);
+    transform: translate3d(90%, 0px, 0px); */
     transform: translateY(0px);
     opacity: 1;
 }
